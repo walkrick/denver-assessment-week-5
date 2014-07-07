@@ -1,7 +1,6 @@
 class Database
   def initialize
     @entities = []
-    @id_counter = 0
   end
 
   def insert(entity)
@@ -22,8 +21,7 @@ class Database
   private
 
   def next_id
-    @id_counter += 1
-    @id_counter
+    @entities.length + 1
   end
 
   def offset_id(id)
