@@ -12,14 +12,6 @@ class ContactDatabase
     contact.dup
   end
 
-  def find(id)
-    (@contacts[offset_id(id)] or raise ContactNotFoundError).dup
-  end
-
-  def delete(id)
-    @contacts.delete_at(offset_id(id)) or raise ContactNotFoundError
-  end
-
   def all
     @contacts.dup
   end
