@@ -9,8 +9,13 @@ class ContactsApp < Sinatra::Base
     @contact_database = ContactDatabase.new
     @user_database = UserDatabase.new
 
-    @user_database.insert(username: "Hunter", password: "puglyfe")
-    @user_database.insert(username: "Spencer", password: "spen123")
+    jeff = @user_database.insert(username: "Spencer", password: "spen123")
+    hunter = @user_database.insert(username: "Hunter", password: "puglyfe")
+
+    @contact_database.insert(:name => "Spencer", :email => "spen@example.com", user_id: jeff[:id])
+    @contact_database.insert(:name => "Jeff D.", :email => "jd@example.com", user_id: jeff[:id])
+    @contact_database.insert(:name => "Mike", :email => "mike@example.com", user_id: jeff[:id])
+    @contact_database.insert(:name => "Kirsten", :email => "kirsten@example.com", user_id: hunter[:id])
   end
 
   get "/" do

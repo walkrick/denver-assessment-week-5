@@ -16,6 +16,10 @@ class ContactDatabase
     @contacts.select { |contact| contact[:user_id] == user_id }
   end
 
+  def all
+    @contacts.dup
+  end
+
   class ContactNotFoundError < RuntimeError ; end
 
   private
