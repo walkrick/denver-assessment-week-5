@@ -1,4 +1,5 @@
 require "sinatra"
+require "./lib/database"
 require "./lib/contact_database"
 require "./lib/user_database"
 

@@ -46,7 +46,7 @@ describe UserDatabase do
     it "raises an error if no user can be found" do
       expect {
         user_database.find(1)
-      }.to raise_error(UserDatabase::UserNotFoundError)
+      }.to raise_error(UserDatabase::EntityNotFoundError)
     end
   end
 end
