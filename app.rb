@@ -10,7 +10,7 @@ class ContactsApp < Sinatra::Base
     @contact_database = ContactDatabase.new
     @user_database = UserDatabase.new
 
-    jeff = @user_database.insert(username: "Spencer", password: "spen123")
+    jeff = @user_database.insert(username: "Jeff", password: "jeff123")
     hunter = @user_database.insert(username: "Hunter", password: "puglyfe")
 
     @contact_database.insert(:name => "Spencer", :email => "spen@example.com", user_id: jeff[:id])
