@@ -18,6 +18,10 @@ class UserDatabase
 
   class UserNotFoundError < RuntimeError; end
 
+  def all
+    @users.dup
+  end
+
   private
 
   def next_id
