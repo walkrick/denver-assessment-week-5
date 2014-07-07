@@ -18,7 +18,7 @@ Where <username> is the logged in user's username
 And I should not see a ""Login"" link",https://www.pivotaltracker.com/story/show/74487792,
 74487810,User can see their contacts,"",1,"Jun 30, 2014","Jul 6, 2014",feature,1,unstarted,"Jul 6, 2014",,,Hunter Gillane,"As a logged in user
 When I visit the home page
-Then I should see a list of my contacts and their information",https://www.pivotaltracker.com/story/show/74487810,
+Then I should see a list of my contacts and their Name and Email",https://www.pivotaltracker.com/story/show/74487810,
 74487824,User can log out,"",1,"Jun 30, 2014","Jul 6, 2014",feature,1,unstarted,"Jul 6, 2014",,,Hunter Gillane,"As a logged in user
 When I click ""Logout""
 Then I should not see ""Welcome <username>""
