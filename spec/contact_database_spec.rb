@@ -3,9 +3,11 @@ require "spec_helper"
 describe ContactDatabase do
   let(:contact_database) { ContactDatabase.new }
 
+  let(:hunter) { {id: 1, username: "hunterg", password: "abc123"} }
+
   describe "#insert" do
     it "returns the object if it succeeds" do
-      contact_as_hash = {:name => "Jeff", :email => "jetaggart@example.com"}
+      contact_as_hash = {:name => "Jeff", :email => "jetaggart@example.com", user_id: hunter[:id]}
 
       result = contact_database.insert(contact_as_hash)
 
@@ -13,7 +15,7 @@ describe ContactDatabase do
     end
 
     it "gives the contact an id" do
-      contact_as_hash = {:name => "Jeff", :email => "jetaggart@example.com"}
+      contact_as_hash = {:name => "Jeff", :email => "jetaggart@example.com", user_id: hunter[:id]}
 
       contact = contact_database.insert(contact_as_hash)
 
@@ -21,7 +23,7 @@ describe ContactDatabase do
     end
 
     it "offsets the id by how many contacts exist" do
-      contact_database.insert({:name => "Jeff", :email => "jetaggart@example.com"})
+      contact_database.insert({:name => "Jeff", :email => "jetaggart@example.com", user_id: hunter[:id]})
       second_contact = contact_database.insert(:name => "Hunter", :email => "hunter@example.com")
 
       expect(second_contact[:id]).to eq(2)
