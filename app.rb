@@ -3,6 +3,7 @@ require "./lib/contact_database"
 require "./lib/user_database"
 
 class ContactsApp < Sinatra::Base
+  enable :sessions
 
   def initialize
     super
